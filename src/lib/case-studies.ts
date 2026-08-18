@@ -30,11 +30,13 @@ export type CaseStudy = {
   summary: string;
   meta: CaseStudyMeta[];
   heroImageCaption: string;
+  heroImage?: string;
   overview: {
     title: string;
     paragraphs: string[];
     highlights: Highlight[];
     imageCaption: string;
+    image?: string;
   };
   problem: {
     title: string;
@@ -47,6 +49,7 @@ export type CaseStudy = {
     paragraphs: string[];
     notes: FieldNote[];
     imageCaption: string;
+    images?: [string, string];
   };
   personas: {
     title: string;
@@ -59,6 +62,7 @@ export type CaseStudy = {
     options: [OptionCard, OptionCard];
     adopted: { badge: string; title: string; description: string };
     comparisonCaptions: [string, string];
+    comparisonImages?: [string[] | undefined, string[] | undefined];
   };
   engineering: {
     title: string;
@@ -67,6 +71,7 @@ export type CaseStudy = {
     myCase: string;
     resolution: string;
     steps: [string, string, string];
+    stepImages?: [string, string, string];
   };
   businessDecision: {
     title: string;
@@ -612,8 +617,8 @@ export const caseStudies: CaseStudy[] = [
         sub: "Actively scaling operations",
       },
     ],
-    heroImageCaption:
-      "Placeholder: Hero product shot - app screens on device mockup",
+    heroImageCaption: "Squadin - home, match search, and request screens",
+    heroImage: "/images/case-studies/squadin/hero.png",
     overview: {
       title: "What Squadin is",
       paragraphs: [
@@ -635,6 +640,7 @@ export const caseStudies: CaseStudy[] = [
         },
       ],
       imageCaption: "Platform overview - key screens showing the ecosystem",
+      image: "/images/case-studies/squadin/overview.png",
     },
     problem: {
       title: "Booking a game meant calling around and hoping",
@@ -668,6 +674,10 @@ export const caseStudies: CaseStudy[] = [
         },
       ],
       imageCaption: "Research synthesis - affinity map or interview notes",
+      images: [
+        "/images/case-studies/squadin/research-1.png",
+        "/images/case-studies/squadin/research-2.png",
+      ],
     },
     personas: {
       title: "Four people, four different jobs to be done",
@@ -720,7 +730,7 @@ export const caseStudies: CaseStudy[] = [
           title: "Book venue on opponent acceptance",
           description:
             "Opponent accepts, but the court was booked by someone else offline. Unreliable experience.",
-          badge: "✗ Rejected - high cancellation rate",
+          badge: "✗ Rejected - no-shows left venues unpaid and empty",
         },
       ],
       adopted: {
@@ -732,6 +742,14 @@ export const caseStudies: CaseStudy[] = [
       comparisonCaptions: [
         "Venue hold + confirmation call screen",
         "Early wireframes/sketches of this flow",
+      ],
+      comparisonImages: [
+        undefined,
+        [
+          "/images/case-studies/squadin/design-challenge-wireframe-1.png",
+          "/images/case-studies/squadin/design-challenge-wireframe-2.png",
+          "/images/case-studies/squadin/design-challenge-wireframe-3.png",
+        ],
       ],
     },
     engineering: {
@@ -748,6 +766,11 @@ export const caseStudies: CaseStudy[] = [
         "1. Sport, date, and slot",
         "2. The part engineering wanted cut - position, level, age, gender",
         "3. Confirmation before the request goes out",
+      ],
+      stepImages: [
+        "/images/case-studies/squadin/engineering-1.png",
+        "/images/case-studies/squadin/engineering-2.png",
+        "/images/case-studies/squadin/engineering-3.png",
       ],
     },
     businessDecision: {

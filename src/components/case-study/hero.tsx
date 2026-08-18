@@ -30,7 +30,10 @@ export function CaseStudyHero({ caseStudy }: { caseStudy: CaseStudy }) {
         ))}
       </div>
 
-      <DeviceMockup caption={caseStudy.heroImageCaption} />
+      <DeviceMockup
+        caption={caseStudy.heroImageCaption}
+        image={caseStudy.heroImage}
+      />
     </section>
   );
 }

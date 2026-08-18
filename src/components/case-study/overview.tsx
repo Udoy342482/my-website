@@ -33,7 +33,7 @@ export function CaseStudyOverview({ caseStudy }: { caseStudy: CaseStudy }) {
         </div>
       </div>
 
-      <DeviceMockup caption={overview.imageCaption} />
+      <DeviceMockup caption={overview.imageCaption} image={overview.image} />
     </section>
   );
 }

@@ -38,8 +38,13 @@ export function CaseStudyEngineering({ caseStudy }: { caseStudy: CaseStudy }) {
       </div>
 
       <div className="flex flex-col gap-6 sm:flex-row">
-        {engineering.steps.map((step) => (
-          <PlaceholderBlock key={step} caption={step} className="aspect-[3/4]" />
+        {engineering.steps.map((step, i) => (
+          <PlaceholderBlock
+            key={step}
+            caption={step}
+            className="aspect-[3/4]"
+            image={engineering.stepImages?.[i]}
+          />
         ))}
       </div>
     </section>

@@ -60,8 +60,13 @@ export function CaseStudyDesignChallenge({
       </div>
 
       <div className="flex flex-col gap-6 sm:flex-row">
-        {designChallenge.comparisonCaptions.map((caption) => (
-          <PlaceholderBlock key={caption} caption={caption} className="aspect-[4/3]" />
+        {designChallenge.comparisonCaptions.map((caption, i) => (
+          <PlaceholderBlock
+            key={caption}
+            caption={caption}
+            className="aspect-[4/3]"
+            images={designChallenge.comparisonImages?.[i]}
+          />
         ))}
       </div>
     </section>
