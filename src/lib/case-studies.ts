@@ -587,7 +587,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "squadin",
     title: "Squadin",
-    tag: "MARKETPLACE",
+    tag: "BOOKING PLATFORM",
     summary:
       "Turning turf booking from a phone call into a platform where players, teams, and venues actually find each other.",
     meta: [
@@ -679,14 +679,13 @@ export const caseStudies: CaseStudy[] = [
           title: "Venue Owner",
           tag: "[ ROLE #1 ]",
           description:
-            "Wants steady bookings without doing sales or scheduling by phone all day.",
+            "Wants bookings without doing sales or scheduling by phone all day.",
         },
         {
           icon: Users,
           title: "Team Captain",
           tag: "[ ROLE #2 ]",
-          description:
-            "Has a full team and a home ground. Just needs someone to actually play against.",
+          description: "Has a full team and a home ground. Just needs an opponent.",
         },
         {
           icon: User,
@@ -700,7 +699,7 @@ export const caseStudies: CaseStudy[] = [
           title: "Incomplete Squad",
           tag: "[ ROLE #4 ]",
           description:
-            "Has some players, but is missing specific positions before a match can happen.",
+            "Has some players, but missing specific positions before a match.",
         },
       ],
     },

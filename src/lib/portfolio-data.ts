@@ -16,6 +16,14 @@ export const stats = [
 
 export const projects = [
   {
+    slug: "squadin",
+    title: "Squadin - Sports Booking",
+    tag: "BOOKING PLATFORM",
+    description:
+      "Engineered scalable slot-allocation grids that reduced field-cancellation rates by 30% through real-time push and automatic fallback matching.",
+    image: "/images/projects/squadin-card.png",
+  },
+  {
     slug: "tagcam",
     title: "Tagcam - AI Camera Platform",
     tag: "AI / CAMERA",
@@ -30,14 +38,6 @@ export const projects = [
     description:
       "A centralized secure communication system built for distributed technical teams. Shrank notification fatigue by 43% with context routing.",
     image: "/images/projects/cordia.png",
-  },
-  {
-    slug: "squadin",
-    title: "Squadin - Sports Booking",
-    tag: "MARKETPLACE",
-    description:
-      "Engineered scalable slot-allocation grids that reduced field-cancellation rates by 30% through real-time push and automatic fallback matching.",
-    image: "/images/projects/squadin.png",
   },
   {
     slug: "epicnap",
