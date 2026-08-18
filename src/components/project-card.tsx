@@ -8,7 +8,10 @@ type Project = (typeof projects)[number];
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="flex flex-1 flex-col gap-5 rounded-xl bg-card p-6">
+    <Link
+      href={`/work/${project.slug}`}
+      className="group flex flex-1 flex-col gap-5 rounded-xl border border-transparent bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:border-border hover:shadow-lg"
+    >
       <div className="relative aspect-[16/10] w-full overflow-hidden rounded">
         <Image
           src={project.image}
@@ -33,14 +36,11 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.description}
         </p>
 
-        <Link
-          href={`/work/${project.slug}`}
-          className="group flex items-center gap-1 py-2 font-mono text-[13px] font-semibold text-foreground"
-        >
+        <span className="flex items-center gap-1 py-2 font-mono text-[13px] font-semibold text-foreground">
           VIEW CASE STUDY
           <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-        </Link>
+        </span>
       </div>
-    </article>
+    </Link>
   );
 }
