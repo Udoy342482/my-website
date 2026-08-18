@@ -7,6 +7,7 @@ export function CaseStudyBusinessDecision({
   caseStudy: CaseStudy;
 }) {
   const { businessDecision } = caseStudy;
+  if (!businessDecision) return null;
   const [colA, colB] = businessDecision.columnLabels;
 
   return (

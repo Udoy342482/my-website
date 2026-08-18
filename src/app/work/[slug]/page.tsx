@@ -9,6 +9,7 @@ import { CaseStudyProblem } from "@/components/case-study/problem";
 import { CaseStudyResearch } from "@/components/case-study/research";
 import { CaseStudyPersonas } from "@/components/case-study/personas";
 import { CaseStudyDesignChallenge } from "@/components/case-study/design-challenge";
+import { CaseStudyKeyDecisions } from "@/components/case-study/key-decisions";
 import { CaseStudyEngineering } from "@/components/case-study/engineering";
 import { CaseStudyBusinessDecision } from "@/components/case-study/business-decision";
 import { CaseStudyOutcome } from "@/components/case-study/outcome";
@@ -52,14 +53,25 @@ export default async function WorkCaseStudyPage(
         <CaseStudyHero caseStudy={caseStudy} />
         <CaseStudyOverview caseStudy={caseStudy} />
         <CaseStudyProblem caseStudy={caseStudy} />
-        <CaseStudyResearch caseStudy={caseStudy} />
+        {caseStudy.research ? <CaseStudyResearch caseStudy={caseStudy} /> : null}
         <CaseStudyPersonas caseStudy={caseStudy} />
-        <CaseStudyDesignChallenge caseStudy={caseStudy} />
-        <CaseStudyEngineering caseStudy={caseStudy} />
-        <CaseStudyBusinessDecision caseStudy={caseStudy} />
+        {caseStudy.designChallenge ? (
+          <CaseStudyDesignChallenge caseStudy={caseStudy} />
+        ) : null}
+        {caseStudy.keyDecisions ? (
+          <CaseStudyKeyDecisions caseStudy={caseStudy} />
+        ) : null}
+        {caseStudy.engineering ? (
+          <CaseStudyEngineering caseStudy={caseStudy} />
+        ) : null}
+        {caseStudy.businessDecision ? (
+          <CaseStudyBusinessDecision caseStudy={caseStudy} />
+        ) : null}
         <CaseStudyOutcome caseStudy={caseStudy} />
         <CaseStudyOpenProblems caseStudy={caseStudy} />
-        <CaseStudyReflection caseStudy={caseStudy} />
+        {caseStudy.reflection ? (
+          <CaseStudyReflection caseStudy={caseStudy} />
+        ) : null}
         <CaseStudyClosingBand
           nextSlug={nextCaseStudy.slug}
           nextTitle={nextCaseStudy.title}

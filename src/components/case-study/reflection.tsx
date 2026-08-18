@@ -3,6 +3,7 @@ import { CaseStudySectionHeader } from "@/components/case-study/section-header";
 
 export function CaseStudyReflection({ caseStudy }: { caseStudy: CaseStudy }) {
   const { reflection } = caseStudy;
+  if (!reflection) return null;
 
   return (
     <section className="flex flex-col gap-8 border-b border-border p-5 py-16 sm:p-8 sm:py-20 lg:px-[135px] lg:py-24">

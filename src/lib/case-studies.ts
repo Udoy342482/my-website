@@ -22,6 +22,13 @@ export type MetricCard = {
   tone?: "brand" | "destructive";
 };
 export type IssueCard = { title: string; description: string };
+export type KeyDecisionCard = {
+  number?: string;
+  badge: string;
+  title: string;
+  description: string;
+  highlighted?: boolean;
+};
 
 export type CaseStudy = {
   slug: string;
@@ -29,6 +36,7 @@ export type CaseStudy = {
   tag: string;
   summary: string;
   meta: CaseStudyMeta[];
+  heroEyebrow?: string;
   heroImageCaption: string;
   heroImage?: string;
   overview: {
@@ -44,7 +52,7 @@ export type CaseStudy = {
     quote: string;
     quoteAttribution: string;
   };
-  research: {
+  research?: {
     title: string;
     paragraphs: string[];
     notes: FieldNote[];
@@ -52,11 +60,12 @@ export type CaseStudy = {
     images?: [string, string];
   };
   personas: {
+    eyebrow?: string;
     title: string;
     description: string;
     items: PersonaItem[];
   };
-  designChallenge: {
+  designChallenge?: {
     title: string;
     description: string;
     options: [OptionCard, OptionCard];
@@ -64,7 +73,12 @@ export type CaseStudy = {
     comparisonCaptions: [string, string];
     comparisonImages?: [string | undefined, string | undefined];
   };
-  engineering: {
+  keyDecisions?: {
+    title: string;
+    description: string;
+    decisions: KeyDecisionCard[];
+  };
+  engineering?: {
     title: string;
     description: string;
     theirCase: string;
@@ -73,7 +87,7 @@ export type CaseStudy = {
     steps: [string, string, string];
     stepImages?: [string, string, string];
   };
-  businessDecision: {
+  businessDecision?: {
     title: string;
     description: string;
     columnLabels: [string, string];
@@ -87,9 +101,9 @@ export type CaseStudy = {
   openProblems: {
     title: string;
     description: string;
-    issues: [IssueCard, IssueCard, IssueCard];
+    issues: IssueCard[];
   };
-  reflection: {
+  reflection?: {
     title: string;
     paragraphs: [string, string];
   };
@@ -346,246 +360,157 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "cordia",
     title: "Cordia",
-    tag: "SAAS / PRODUCTIVITY",
+    tag: "DATING APPLICATION",
     summary:
-      "Rebuilding team communication around context instead of channels, so a message arrives already knowing why it matters.",
+      "A dating app designed for those starting fresh, prioritizing schedules and values over endless swipes.",
     meta: [
       {
         label: "ROLE",
         value: "Product Designer",
-        sub: "End-to-end, embedded with the core eng pod",
-      },
-      {
-        label: "TIMELINE",
-        value: "Jan 2023 - Nov 2023",
-        sub: "10 months from discovery to GA",
+        sub: "High-fidelity UI design & interactive prototyping",
       },
       {
         label: "TEAM",
-        value: "PM + 6 Engineers",
-        sub: "Dedicated squad inside a larger platform org",
+        value: "Glen Potter (Potcor Pty Ltd)",
+        sub: "Defined brand direction and authored detailed specifications.",
       },
       {
         label: "STATUS",
-        value: "Live, self-serve and enterprise",
-        sub: "Actively expanding integrations",
+        value: "Live on iOS & Android",
+        sub: "Early growth stage",
       },
     ],
-    heroImageCaption:
-      "Placeholder: Hero product shot - routed threads and notification center",
+    heroEyebrow: "CORDIA CASE STUDY",
+    heroImageCaption: "Hero product shot - app screens on device mockup",
+    heroImage: "/images/case-studies/cordia/hero.png",
     overview: {
       title: "What Cordia is",
       paragraphs: [
-        "Cordia is a centralized, secure communication hub for distributed technical teams. Instead of another inbox, messages carry the context of the system, incident, or project they came from, so routing happens automatically instead of by habit.",
-        "I led design from the first churn interviews through GA, partnering with the PM and a six-person engineering pod to rebuild the notification model from the ground up.",
+        "Cordia (formerly Second Story) connects people based on true compatibility, parental status, availability, values, and dealbreakers not just photos.",
+        "I personally crafted the product requirements screen by screen, then designed and developed a fully interactive, pixel-perfect Figma prototype for Glen Potter at Potcor Pty Ltd.",
       ],
       highlights: [
         {
-          index: "01 / CONTEXT ROUTING",
+          index: "01 / COMPATIBILITY FIRST",
           title: "",
           description:
-            "Messages inherit metadata from the system that generated them, so they land in the right channel without manual triage.",
+            "Capturing parental status, availability, values, and dealbreakers before any match is made.",
         },
         {
-          index: "02 / NOTIFICATION FATIGUE",
+          index: "02 / SCHEDULE-AWARE MATCHING",
           title: "",
           description:
-            "Cut alert volume per engineer by 43% by collapsing duplicate context instead of duplicate messages.",
+            "Visualizing overlapping free time so a match can turn into a date invite with a single tap.",
         },
       ],
-      imageCaption: "Platform overview - routed threads and context-aware notification center",
+      imageCaption: "Platform overview - key screens showing the ecosystem",
+      image: "/images/case-studies/cordia/overview.png",
     },
     problem: {
-      title: "Every channel looked equally urgent",
+      title: "Endless swiping doesn't work for lives that are already full.",
       paragraphs: [
-        "Distributed teams were running a dozen tools that all pushed notifications with the same visual weight, whether it was a production incident or a lunch poll. Engineers had started muting everything just to get through a day.",
-        "The real cost wasn't missed messages, it was the constant context-switching required to figure out if a notification mattered at all. That decision fatigue was quietly eating hours every week.",
+        "Separated, divorced, single parents, and career-driven daters need quick clarity: does this person's life truly fit mine?",
+        "Swipe-first apps focus on quantity, not quality. Cordia flips that approach.",
       ],
       quote:
-        "\"People weren't ignoring us because they didn't care. They were ignoring us because we'd trained them that everything was equally loud.\"",
-      quoteAttribution: "- FOUNDER DEBRIEF",
-    },
-    research: {
-      title: "Mapping where trust in notifications broke down",
-      paragraphs: [
-        "Building on an internal churn survey of 40 lapsed teams, I ran structured interviews with 15 engineering leads and shadowed four teams through a full on-call rotation to see notification behavior in the moment, not just recalled after the fact.",
-        "The insight that reshaped the roadmap: urgency wasn't something engineers could self-report accurately in the moment. It had to be inferred from system context - which service, which severity, which time of day - not from a sender picking a priority flag.",
-      ],
-      notes: [
-        {
-          label: "ON-CALL ENGINEER, INFRA TEAM",
-          quote:
-            "\"By the third alert of the night everything just sounds the same in my head.\"",
-          insight: "- why severity had to come from the system, not a dropdown",
-        },
-        {
-          label: "ENGINEERING MANAGER",
-          quote:
-            "\"I mute the channels I actually need, because the ones I don't need are just as loud.\"",
-          insight: "- the case for context-based routing over channel-based routing",
-        },
-      ],
-      imageCaption: "Research synthesis - notification fatigue interview affinity map",
+        "\"Dating should reflect who you are today, not who you were a decade ago.\"",
+      quoteAttribution: "- CORDIA.",
     },
     personas: {
-      title: "Four people, four different jobs to be done",
-      description:
-        "Cordia isn't one inbox with one owner. It routes for an entire org, and each role needed a different guarantee from the same system.",
+      eyebrow: "WHO CORDIA IS BUILT FOR",
+      title: "Four life stages, united by the need for genuine connection.",
+      description: "Four distinct life stages, clearly identified in the brief.",
       items: [
         {
           icon: Building2,
-          title: "Engineering Manager",
+          title: "Separated or Divorced",
           tag: "[ ROLE #1 ]",
-          description:
-            "Needs a reliable signal for what actually needs their attention today versus this week.",
+          description: "Starting fresh, seeking something meaningful and lasting.",
         },
         {
           icon: Users,
-          title: "On-Call Engineer",
+          title: "Single Parent — Full-Time",
           tag: "[ ROLE #2 ]",
           description:
-            "Needs incident context attached to the alert, not three tabs away in a runbook.",
+            "Parenting full-time—matches must understand this commitment.",
         },
         {
           icon: User,
-          title: "Individual Contributor",
+          title: "Single Parent — Shared Custody",
           tag: "[ ROLE #3 ]",
           description:
-            "Wants fewer, better-targeted notifications instead of more filtering controls.",
+            "Alternating weeks—availability is as important as chemistry.",
         },
         {
           icon: Users,
-          title: "Platform Admin",
+          title: "Career-Focused, Ready to Settle",
           tag: "[ ROLE #4 ]",
           description:
-            "Owns integration health and needs routing rules that don't silently break when a service is renamed.",
+            "Established career, now seeking a meaningful relationship.",
         },
       ],
     },
-    designChallenge: {
-      title: "The chicken-and-egg of routing without rules fatigue",
+    keyDecisions: {
+      title: "Three pivotal choices that shaped the product.",
       description:
-        "Do we make every team hand-configure routing rules up front, or infer routing automatically? Manual rules are precise but nobody sets them up. Automatic routing is fast to adopt but risks getting it wrong invisibly.",
-      options: [
+        "Not the full specification—just the essentials that define its look, feel, and launch.",
+      decisions: [
         {
-          label: "Option 1",
-          title: "Fully manual routing rules at onboarding",
+          number: "01",
+          badge: "INTERACTION",
+          title: "Tap to decide, swipe to browse.",
           description:
-            "Accurate once configured, but onboarding data showed under 20% of teams finished setup, so most got no benefit at all.",
-          badge: "✗ Rejected - onboarding abandonment",
+            "Like and dismiss require intentional taps; swiping only scrolls through photos.",
         },
         {
-          label: "Option 2",
-          title: "Fully automatic routing, no visibility",
+          number: "02",
+          badge: "BRAND",
+          title: "Cordia front and center, Second Story left behind.",
           description:
-            "High adoption, but when it misrouted an incident, teams had no way to see why or correct it, and trust collapsed fast.",
-          badge: "✗ Rejected - unrecoverable trust breaks",
-        },
-      ],
-      adopted: {
-        badge: "✓ Adopted - fast to adopt, safe to correct",
-        title: "Shipped: Smart defaults with a visible override",
-        description:
-          "Routing infers context automatically from day one, but every routed message shows why it landed there and lets anyone reroute it in one action, quietly teaching the system as it goes.",
-      },
-      comparisonCaptions: [
-        "Auto-routed thread with visible context",
-        "Early wireframes/sketches of this flow",
-      ],
-    },
-    engineering: {
-      title: "Defending the inline reroute control",
-      description:
-        "Engineering wanted to ship routing decisions as a one-way pipeline to hit the GA date. I had to make the case for a feedback loop that added real scope.",
-      theirCase:
-        "\"A one-way routing pipeline is a fraction of the build. Feedback loops mean new data models, new events, new edge cases.\"",
-      myCase:
-        "\"Without a way to correct a bad route, the first serious misroute becomes the last time that team trusts the product - and we lose them before we ever learn from the mistake.\"",
-      resolution:
-        "We kept the feedback loop, but scoped it down to a single reroute action with an optional one-line reason, instead of a full rules editor, which let engineering ship it inside the same milestone.",
-      steps: [
-        "1. Auto-routed thread with visible context",
-        "2. The part that needed defending - inline reroute + reason",
-        "3. Confirmed routing feeding back into the model",
-      ],
-    },
-    businessDecision: {
-      title: "Why I pushed back on gating context routing",
-      description:
-        "The initial plan put context-based routing behind the enterprise tier to protect revenue. I argued for including it in every tier, since routing was the feature that proved the product's core value during trial.",
-      columnLabels: ["SELF-SERVE", "ENTERPRISE"],
-      rows: [
-        {
-          stage: "MVP (NOW)",
-          a: "Context routing included, capped integrations",
-          b: "Unlimited integrations, admin routing controls",
+            "Originally built as Second Story internally, every public screen proudly displays Cordia.",
         },
         {
-          stage: "AT 50K ACTIVE",
-          a: "Same, routing stays core",
-          b: "Custom SLA-based severity models",
-        },
-        {
-          stage: "AT 1M ACTIVE",
-          a: "Usage-based integration add-ons",
-          b: "Dedicated routing infrastructure",
+          badge: "PRICING",
+          title: "Three months free before any payment.",
+          description:
+            "FRESHSTART unlocks Premium at launch with no credit card needed.",
+          highlighted: true,
         },
       ],
     },
     outcome: {
-      title: "Live, and cutting real notification noise",
+      title: "Available on both stores, early in its growth journey.",
       description:
-        "Cordia shipped to GA and is now the default communication layer for its early enterprise customers. The first quarter of data validated the routing model while surfacing where trust still needs reinforcement.",
+        "Cordia launched on iOS and Android under Cordia Group Pty Ltd. These figures are verified public store listings, not internal data.",
       metrics: [
         {
-          value: "Quarter 1",
-          label: "Insight Period",
-          description:
-            "First full quarter tracked post-GA to check retention against the churn baseline.",
+          value: "10+",
+          label: "GOOGLE PLAY DOWNLOADS",
+          description: "Downloads reported on the Google Play Store listing.",
         },
         {
-          value: "43%",
-          label: "DROP IN ALERT VOLUME",
-          description:
-            "Average reduction in notifications per engineer versus each team's prior tool stack.",
-          tone: "brand",
+          value: "5.0",
+          label: "APP STORE RATING",
+          description: "Average rating displayed on the Apple App Store listing.",
         },
         {
-          value: "6%",
-          label: "MANUAL REROUTE RATE",
+          value: "1",
+          label: "APP STORE RATINGS COUNT",
           description:
-            "Share of routed messages engineers corrected, now the core training signal for routing.",
-          tone: "destructive",
+            "Total number of ratings recorded on the Apple App Store listing.",
         },
       ],
     },
     openProblems: {
-      title: "Being honest about where it stands",
+      title: "Honest about current challenges.",
       description:
-        "Great design portfolios don't pretend everything is perfect post-launch. Here are the three main live problems still being designed for.",
+        "This shipped as a linked prototype, so 'broken' means gaps in the spec, not user complaints-yet.",
       issues: [
         {
-          title: "Integration renames still break routing silently",
+          title: "Onboarding step count inconsistent across specs.",
           description:
-            "Renaming a connected service upstream can desync routing rules without surfacing a warning to admins.",
+            "Most show 'Step X of 13'; one shows 'Step 8 of 10.'",
         },
-        {
-          title: "Cross-team thread ownership is unclear",
-          description:
-            "When a thread gets routed across two teams, there's no single owner, so follow-up sometimes stalls.",
-        },
-        {
-          title: "Reroute reasons go unread",
-          description:
-            "The optional reason left on a reroute rarely gets reviewed by anyone, weakening the feedback loop it was meant to feed.",
-        },
-      ],
-    },
-    reflection: {
-      title: "What I'd carry forward",
-      paragraphs: [
-        "Cordia taught me that trust in an automated system is rebuilt one visible, reversible correction at a time. The reroute control mattered more to adoption than the routing accuracy itself.",
-        "If I could rebuild the first phase, I'd instrument reroute-reason review into a manager-facing surface from day one, instead of treating it as a training signal nobody has to look at.",
       ],
     },
   },

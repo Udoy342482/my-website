@@ -7,7 +7,7 @@ export function CaseStudyPersonas({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
     <section className="flex flex-col gap-10 border-b border-border p-5 py-16 sm:p-8 sm:py-20 lg:px-[135px] lg:py-24">
       <CaseStudySectionHeader
-        eyebrow="WHO I WAS DESIGNING FOR"
+        eyebrow={personas.eyebrow ?? "WHO I WAS DESIGNING FOR"}
         title={personas.title}
         description={personas.description}
       />

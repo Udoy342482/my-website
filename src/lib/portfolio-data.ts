@@ -24,20 +24,20 @@ export const projects = [
     image: "/images/projects/squadin-card.png",
   },
   {
+    slug: "cordia",
+    title: "Cordia - Dating App",
+    tag: "DATING APPLICATION",
+    description:
+      "Cordia is a dating app for single parents and professionals seeking real relationships based on availability, values, and life stage, not endless swiping.",
+    image: "/images/projects/cordia-card.png",
+  },
+  {
     slug: "tagcam",
     title: "Tagcam - AI Camera Platform",
     tag: "AI / CAMERA",
     description:
       "Building an agentic video-first platform capturing dynamic parameters and rendering metadata at the edge. Over 10M+ operations handled monthly.",
     image: "/images/projects/tagcam.png",
-  },
-  {
-    slug: "cordia",
-    title: "Cordia - Communication Hub",
-    tag: "SAAS / PRODUCTIVITY",
-    description:
-      "A centralized secure communication system built for distributed technical teams. Shrank notification fatigue by 43% with context routing.",
-    image: "/images/projects/cordia.png",
   },
   {
     slug: "epicnap",

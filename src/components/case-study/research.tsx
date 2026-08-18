@@ -4,6 +4,7 @@ import { PlaceholderBlock } from "@/components/case-study/placeholder-block";
 
 export function CaseStudyResearch({ caseStudy }: { caseStudy: CaseStudy }) {
   const { research } = caseStudy;
+  if (!research) return null;
 
   return (
     <section className="flex flex-col gap-10 border-b border-border p-5 py-16 sm:p-8 sm:py-20 lg:px-[135px] lg:py-24">
