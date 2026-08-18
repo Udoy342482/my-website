@@ -38,6 +38,7 @@ export function AboutHero() {
             alt={aboutBio.portrait.name}
             fill
             sizes="(min-width: 1024px) 392px, 90vw"
+            quality={100}
             className="object-cover"
             priority
           />

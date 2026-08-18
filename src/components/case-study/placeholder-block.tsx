@@ -6,10 +6,12 @@ export function PlaceholderBlock({
   caption,
   className,
   image,
+  sizes = "(min-width: 1024px) calc(100vw - 270px), (min-width: 640px) calc(100vw - 64px), calc(100vw - 40px)",
 }: {
   caption?: string;
   className?: string;
   image?: string;
+  sizes?: string;
 }) {
   return (
     <div className="flex flex-1 flex-col gap-3">
@@ -24,7 +26,8 @@ export function PlaceholderBlock({
             src={image}
             alt={caption ?? ""}
             fill
-            sizes="(min-width: 1024px) 560px, 100vw"
+            sizes={sizes}
+            quality={100}
             className="object-contain p-3"
           />
         ) : null}

@@ -15,7 +15,8 @@ export function DeviceMockup({
             src={image}
             alt={caption}
             fill
-            sizes="(min-width: 1024px) 1120px, 100vw"
+            sizes="(min-width: 1024px) calc(100vw - 270px), (min-width: 640px) calc(100vw - 64px), calc(100vw - 40px)"
+            quality={100}
             className="object-cover"
             priority
           />

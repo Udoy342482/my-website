@@ -44,6 +44,7 @@ export function CaseStudyEngineering({ caseStudy }: { caseStudy: CaseStudy }) {
             caption={step}
             className="aspect-[3/4]"
             image={engineering.stepImages?.[i]}
+            sizes="(min-width: 1024px) calc(33.33vw - 106px), (min-width: 640px) calc(33.33vw - 37px), calc(100vw - 40px)"
           />
         ))}
       </div>

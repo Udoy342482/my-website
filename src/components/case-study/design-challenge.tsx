@@ -66,6 +66,7 @@ export function CaseStudyDesignChallenge({
             caption={caption}
             className="aspect-[4/3]"
             image={designChallenge.comparisonImages?.[i]}
+            sizes="(min-width: 1024px) calc(50vw - 147px), (min-width: 640px) calc(50vw - 44px), calc(100vw - 40px)"
           />
         ))}
       </div>

@@ -17,7 +17,8 @@ export function ProjectCard({ project }: { project: Project }) {
           src={project.image}
           alt={project.title}
           fill
-          sizes="(min-width: 768px) 50vw, 100vw"
+          sizes="(min-width: 1024px) calc(50vw - 147px), (min-width: 768px) calc(50vw - 44px), calc(100vw - 40px)"
+          quality={100}
           className="object-cover"
         />
       </div>

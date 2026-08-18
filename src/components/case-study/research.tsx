@@ -38,8 +38,14 @@ export function CaseStudyResearch({ caseStudy }: { caseStudy: CaseStudy }) {
 
       <div className="flex flex-col gap-3">
         <div className="flex gap-3">
-          <PlaceholderBlock image={research.images?.[0]} />
-          <PlaceholderBlock image={research.images?.[1]} />
+          <PlaceholderBlock
+            image={research.images?.[0]}
+            sizes="(min-width: 1024px) calc(50vw - 141px), (min-width: 640px) calc(50vw - 38px), calc(50vw - 26px)"
+          />
+          <PlaceholderBlock
+            image={research.images?.[1]}
+            sizes="(min-width: 1024px) calc(50vw - 141px), (min-width: 640px) calc(50vw - 38px), calc(50vw - 26px)"
+          />
         </div>
         <p className="text-center font-mono text-xs text-muted-foreground">
           {research.imageCaption}
