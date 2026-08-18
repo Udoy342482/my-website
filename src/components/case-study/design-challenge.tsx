@@ -65,7 +65,7 @@ export function CaseStudyDesignChallenge({
             key={caption}
             caption={caption}
             className="aspect-[4/3]"
-            images={designChallenge.comparisonImages?.[i]}
+            image={designChallenge.comparisonImages?.[i]}
           />
         ))}
       </div>

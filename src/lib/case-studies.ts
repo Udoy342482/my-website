@@ -62,7 +62,7 @@ export type CaseStudy = {
     options: [OptionCard, OptionCard];
     adopted: { badge: string; title: string; description: string };
     comparisonCaptions: [string, string];
-    comparisonImages?: [string[] | undefined, string[] | undefined];
+    comparisonImages?: [string | undefined, string | undefined];
   };
   engineering: {
     title: string;
@@ -744,12 +744,8 @@ export const caseStudies: CaseStudy[] = [
         "Early wireframes/sketches of this flow",
       ],
       comparisonImages: [
-        undefined,
-        [
-          "/images/case-studies/squadin/design-challenge-wireframe-1.png",
-          "/images/case-studies/squadin/design-challenge-wireframe-2.png",
-          "/images/case-studies/squadin/design-challenge-wireframe-3.png",
-        ],
+        "/images/case-studies/squadin/design-challenge-booking-flow.png",
+        "/images/case-studies/squadin/design-challenge-wireframe-flow.png",
       ],
     },
     engineering: {

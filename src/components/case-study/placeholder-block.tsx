@@ -6,12 +6,10 @@ export function PlaceholderBlock({
   caption,
   className,
   image,
-  images,
 }: {
   caption?: string;
   className?: string;
   image?: string;
-  images?: string[];
 }) {
   return (
     <div className="flex flex-1 flex-col gap-3">
@@ -29,20 +27,6 @@ export function PlaceholderBlock({
             sizes="(min-width: 1024px) 560px, 100vw"
             className="object-contain p-3"
           />
-        ) : images ? (
-          <div className="grid h-full grid-cols-3 gap-2 p-3">
-            {images.map((src) => (
-              <div key={src} className="relative h-full w-full">
-                <Image
-                  src={src}
-                  alt={caption ?? ""}
-                  fill
-                  sizes="200px"
-                  className="object-contain"
-                />
-              </div>
-            ))}
-          </div>
         ) : null}
       </div>
       {caption ? (
