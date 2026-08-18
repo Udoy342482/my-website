@@ -6,7 +6,7 @@ export function HeroSection() {
   return (
     <section
       id="top"
-      className="flex flex-col gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:gap-10 lg:px-20 lg:py-28"
+      className="flex flex-col gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:gap-10 lg:px-[135px] lg:py-28"
     >
       <div className="flex items-center gap-2">
         <p className="font-mono text-base font-semibold text-brand">

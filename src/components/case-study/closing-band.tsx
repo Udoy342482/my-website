@@ -11,7 +11,7 @@ export function CaseStudyClosingBand({
   nextTeaser: string;
 }) {
   return (
-    <section className="flex flex-col gap-10 bg-foreground px-5 py-20 sm:px-8 lg:px-20 lg:py-30">
+    <section className="flex flex-col gap-10 bg-foreground px-5 py-20 sm:px-8 lg:px-[135px] lg:py-30">
       <div className="flex flex-col items-start justify-between gap-10 lg:flex-row">
         <div className="flex max-w-[700px] flex-col gap-6">
           <p className="font-mono text-3xl leading-tight font-semibold text-background sm:text-4xl">

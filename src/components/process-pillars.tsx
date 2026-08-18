@@ -2,7 +2,7 @@ import { processPillars } from "@/lib/portfolio-data";
 
 export function ProcessPillars() {
   return (
-    <section className="flex w-full flex-col gap-8 border-y border-border bg-muted px-5 py-16 sm:px-8 lg:gap-12 lg:px-20 lg:py-24">
+    <section className="flex w-full flex-col gap-8 border-y border-border bg-muted px-5 py-16 sm:px-8 lg:gap-12 lg:px-[135px] lg:py-24">
       <div className="flex flex-col items-baseline justify-between gap-2 sm:flex-row">
         <h2 className="font-mono text-2xl font-bold text-foreground sm:text-3xl lg:text-[32px]">
           PROCESS PILLARS

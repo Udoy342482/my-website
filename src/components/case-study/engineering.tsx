@@ -6,7 +6,7 @@ export function CaseStudyEngineering({ caseStudy }: { caseStudy: CaseStudy }) {
   const { engineering } = caseStudy;
 
   return (
-    <section className="flex flex-col gap-10 border-b border-border p-5 py-16 sm:p-8 sm:py-20 lg:p-20 lg:py-24">
+    <section className="flex flex-col gap-10 border-b border-border p-5 py-16 sm:p-8 sm:py-20 lg:px-[135px] lg:py-24">
       <CaseStudySectionHeader
         eyebrow="WORKING WITH ENGINEERING"
         title={engineering.title}

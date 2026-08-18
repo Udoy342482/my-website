@@ -2,7 +2,7 @@ import { availability } from "@/lib/portfolio-data";
 
 export function AvailabilityBlock() {
   return (
-    <section className="flex w-full flex-col gap-4 bg-muted px-5 py-16 sm:px-8 lg:px-20 lg:py-24">
+    <section className="flex w-full flex-col gap-4 bg-muted px-5 py-16 sm:px-8 lg:px-[135px] lg:py-24">
       <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-[#b2f5ea] bg-[#e6fffa] px-2.5 py-1">
           <span className="size-2 rounded-full bg-[#38b2ac]" />

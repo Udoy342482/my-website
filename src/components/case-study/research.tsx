@@ -6,7 +6,7 @@ export function CaseStudyResearch({ caseStudy }: { caseStudy: CaseStudy }) {
   const { research } = caseStudy;
 
   return (
-    <section className="flex flex-col gap-10 border-b border-border p-5 py-16 sm:p-8 sm:py-20 lg:p-20 lg:py-24">
+    <section className="flex flex-col gap-10 border-b border-border p-5 py-16 sm:p-8 sm:py-20 lg:px-[135px] lg:py-24">
       <CaseStudySectionHeader eyebrow="RESEARCH" title={research.title} />
 
       <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">

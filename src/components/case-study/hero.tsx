@@ -3,7 +3,7 @@ import { DeviceMockup } from "@/components/case-study/device-mockup";
 
 export function CaseStudyHero({ caseStudy }: { caseStudy: CaseStudy }) {
   return (
-    <section className="flex flex-col gap-8 border-b border-border p-5 sm:p-8 lg:gap-12 lg:p-20">
+    <section className="flex flex-col gap-8 border-b border-border p-5 sm:p-8 lg:gap-12 lg:px-[135px] lg:py-20">
       <p className="font-mono text-sm font-bold text-brand">
         PRODUCT DESIGN CASE STUDY
       </p>

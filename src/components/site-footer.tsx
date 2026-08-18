@@ -7,7 +7,7 @@ import { contactEmail, socials } from "@/lib/portfolio-data";
 
 export function SiteFooter() {
   return (
-    <footer className="flex w-full flex-col gap-12 bg-muted px-5 pt-16 pb-10 sm:px-8 lg:gap-16 lg:px-20 lg:pt-30 lg:pb-16">
+    <footer className="flex w-full flex-col gap-12 bg-muted px-5 pt-16 pb-10 sm:px-8 lg:gap-16 lg:px-[135px] lg:pt-30 lg:pb-16">
 
       <div className="flex flex-col items-start justify-between gap-10 lg:flex-row">
         <div className="flex max-w-[600px] flex-col gap-6">

@@ -5,7 +5,7 @@ export function CaseStudyReflection({ caseStudy }: { caseStudy: CaseStudy }) {
   const { reflection } = caseStudy;
 
   return (
-    <section className="flex flex-col gap-8 border-b border-border p-5 py-16 sm:p-8 sm:py-20 lg:p-20 lg:py-24">
+    <section className="flex flex-col gap-8 border-b border-border p-5 py-16 sm:p-8 sm:py-20 lg:px-[135px] lg:py-24">
       <CaseStudySectionHeader eyebrow="REFLECTION" title={reflection.title} />
 
       <div className="flex flex-col gap-8 text-lg leading-8 text-foreground-secondary sm:flex-row sm:gap-12">

@@ -5,7 +5,7 @@ export function SelectedWork() {
   return (
     <section
       id="work"
-      className="flex w-full flex-col gap-12 px-5 py-16 sm:px-8 lg:px-20 lg:py-24"
+      className="flex w-full flex-col gap-12 px-5 py-16 sm:px-8 lg:px-[135px] lg:py-24"
     >
       <div className="flex flex-col items-baseline justify-between gap-2 sm:flex-row">
         <h2 className="font-mono text-2xl font-bold text-foreground sm:text-3xl lg:text-[32px]">

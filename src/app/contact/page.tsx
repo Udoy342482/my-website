@@ -19,7 +19,7 @@ export default function ContactPage() {
       <SiteHeader />
       <main className="flex flex-1 flex-col">
         <ContactHero />
-        <section className="flex w-full flex-col gap-16 px-5 py-16 sm:px-8 lg:flex-row lg:px-20 lg:py-24">
+        <section className="flex w-full flex-col gap-16 px-5 py-16 sm:px-8 lg:flex-row lg:px-[135px] lg:py-24">
           <ContactForm />
           <ContactInfo />
         </section>

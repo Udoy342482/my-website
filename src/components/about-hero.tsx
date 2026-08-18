@@ -4,7 +4,7 @@ import { aboutBio, contactEmail } from "@/lib/portfolio-data";
 
 export function AboutHero() {
   return (
-    <section className="flex flex-col gap-10 px-5 py-16 sm:px-8 lg:flex-row lg:gap-16 lg:px-20 lg:py-24">
+    <section className="flex flex-col gap-10 px-5 py-16 sm:px-8 lg:flex-row lg:gap-16 lg:px-[135px] lg:py-24">
       <div className="flex flex-1 flex-col gap-8">
         <p className="font-mono text-base font-semibold text-brand">
           {aboutBio.eyebrow}

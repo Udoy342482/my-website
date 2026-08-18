@@ -2,7 +2,7 @@ import { contactHero } from "@/lib/portfolio-data";
 
 export function ContactHero() {
   return (
-    <section className="flex flex-col gap-10 border-b border-border px-5 py-16 sm:px-8 lg:px-20 lg:py-28">
+    <section className="flex flex-col gap-10 border-b border-border px-5 py-16 sm:px-8 lg:px-[135px] lg:py-28">
       <p className="font-mono text-base font-semibold text-brand">
         {contactHero.eyebrow}
       </p>
