@@ -1,6 +1,8 @@
-import { skills } from "@/lib/portfolio-data";
+import { getSiteContent } from "@/lib/site-content";
 
-export function SkillsBlock() {
+export async function SkillsBlock() {
+  const { skills } = await getSiteContent();
+
   return (
     <section
       id="about"

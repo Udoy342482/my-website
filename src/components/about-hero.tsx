@@ -1,8 +1,10 @@
 import Image from "next/image";
 
-import { aboutBio, contactEmail } from "@/lib/portfolio-data";
+import { getSiteContent } from "@/lib/site-content";
 
-export function AboutHero() {
+export async function AboutHero() {
+  const { aboutBio, contactEmail } = await getSiteContent();
+
   return (
     <section className="flex flex-col gap-10 px-5 py-16 sm:px-8 lg:flex-row lg:gap-16 lg:px-[135px] lg:py-24">
       <div className="flex flex-1 flex-col gap-8">

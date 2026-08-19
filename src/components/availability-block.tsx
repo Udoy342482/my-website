@@ -1,6 +1,8 @@
-import { availability } from "@/lib/portfolio-data";
+import { getSiteContent } from "@/lib/site-content";
 
-export function AvailabilityBlock() {
+export async function AvailabilityBlock() {
+  const { availability } = await getSiteContent();
+
   return (
     <section className="flex w-full flex-col gap-4 bg-muted px-5 py-16 sm:px-8 lg:px-[135px] lg:py-24">
       <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">

@@ -3,9 +3,11 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { contactEmail, socials } from "@/lib/portfolio-data";
+import { getSiteContent } from "@/lib/site-content";
 
-export function SiteFooter() {
+export async function SiteFooter() {
+  const { contactEmail, socials } = await getSiteContent();
+
   return (
     <footer className="flex w-full flex-col gap-12 bg-muted px-5 pt-16 pb-10 sm:px-8 lg:gap-16 lg:px-[135px] lg:pt-30 lg:pb-16">
 

@@ -1,6 +1,8 @@
-import { contactHero } from "@/lib/portfolio-data";
+import { getSiteContent } from "@/lib/site-content";
 
-export function ContactHero() {
+export async function ContactHero() {
+  const { contactHero } = await getSiteContent();
+
   return (
     <section className="flex flex-col gap-10 border-b border-border px-5 py-16 sm:px-8 lg:px-[135px] lg:py-28">
       <p className="font-mono text-base font-semibold text-brand">

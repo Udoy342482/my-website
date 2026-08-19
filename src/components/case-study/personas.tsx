@@ -1,5 +1,6 @@
 import type { CaseStudy } from "@/lib/case-studies";
 import { CaseStudySectionHeader } from "@/components/case-study/section-header";
+import { personaIconMap } from "@/lib/persona-icons";
 
 export function CaseStudyPersonas({ caseStudy }: { caseStudy: CaseStudy }) {
   const { personas } = caseStudy;
@@ -13,13 +14,15 @@ export function CaseStudyPersonas({ caseStudy }: { caseStudy: CaseStudy }) {
       />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {personas.items.map((persona) => (
+        {personas.items.map((persona) => {
+          const Icon = personaIconMap[persona.icon];
+          return (
           <div
             key={persona.title}
             className="flex flex-col gap-4 rounded-xl bg-card p-6"
           >
             <div className="flex size-10 items-center justify-center rounded-full bg-muted">
-              <persona.icon className="size-5 text-brand" />
+              <Icon className="size-5 text-brand" />
             </div>
             <div className="flex items-center justify-between font-mono">
               <p className="text-lg font-bold text-foreground">
@@ -31,7 +34,8 @@ export function CaseStudyPersonas({ caseStudy }: { caseStudy: CaseStudy }) {
               {persona.description}
             </p>
           </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

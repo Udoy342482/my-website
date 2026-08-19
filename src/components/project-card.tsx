@@ -2,11 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import type { projects } from "@/lib/portfolio-data";
+import type { ProjectCard as ProjectCardData } from "@/lib/site-content";
 
-type Project = (typeof projects)[number];
-
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project }: { project: ProjectCardData }) {
   return (
     <Link
       href={`/work/${project.slug}`}

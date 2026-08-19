@@ -1,6 +1,8 @@
-import { processPillars } from "@/lib/portfolio-data";
+import { getSiteContent } from "@/lib/site-content";
 
-export function ProcessPillars() {
+export async function ProcessPillars() {
+  const { processPillars } = await getSiteContent();
+
   return (
     <section className="flex w-full flex-col gap-8 border-y border-border bg-muted px-5 py-16 sm:px-8 lg:gap-12 lg:px-[135px] lg:py-24">
       <div className="flex flex-col items-baseline justify-between gap-2 sm:flex-row">

@@ -1,7 +1,9 @@
-import { projects } from "@/lib/portfolio-data";
+import { getSiteContent } from "@/lib/site-content";
 import { ProjectCard } from "@/components/project-card";
 
-export function SelectedWork() {
+export async function SelectedWork() {
+  const { projects } = await getSiteContent();
+
   return (
     <section
       id="work"

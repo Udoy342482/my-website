@@ -16,9 +16,10 @@ import { CaseStudyOutcome } from "@/components/case-study/outcome";
 import { CaseStudyOpenProblems } from "@/components/case-study/open-problems";
 import { CaseStudyReflection } from "@/components/case-study/reflection";
 import { CaseStudyClosingBand } from "@/components/case-study/closing-band";
-import { caseStudies, getCaseStudy, getNextCaseStudy } from "@/lib/case-studies";
+import { getCaseStudiesData, getCaseStudy, getNextCaseStudy } from "@/lib/case-studies";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const caseStudies = await getCaseStudiesData();
   return caseStudies.map((study) => ({ slug: study.slug }));
 }
 
@@ -26,7 +27,8 @@ export async function generateMetadata(
   props: PageProps<"/work/[slug]">
 ): Promise<Metadata> {
   const { slug } = await props.params;
-  const caseStudy = getCaseStudy(slug);
+  const caseStudies = await getCaseStudiesData();
+  const caseStudy = getCaseStudy(caseStudies, slug);
 
   if (!caseStudy) return {};
 
@@ -40,11 +42,12 @@ export default async function WorkCaseStudyPage(
   props: PageProps<"/work/[slug]">
 ) {
   const { slug } = await props.params;
-  const caseStudy = getCaseStudy(slug);
+  const caseStudies = await getCaseStudiesData();
+  const caseStudy = getCaseStudy(caseStudies, slug);
 
   if (!caseStudy) notFound();
 
-  const nextCaseStudy = getNextCaseStudy(slug);
+  const nextCaseStudy = getNextCaseStudy(caseStudies, slug);
 
   return (
     <div className="flex min-h-full flex-1 flex-col bg-background">

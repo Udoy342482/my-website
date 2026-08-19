@@ -1,14 +1,11 @@
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
 import { CopyEmailButton } from "@/components/copy-email-button";
-import {
-  contactEmail,
-  contactLocation,
-  contactPhone,
-  socials,
-} from "@/lib/portfolio-data";
+import { getSiteContent } from "@/lib/site-content";
 
-export function ContactInfo() {
+export async function ContactInfo() {
+  const { contactEmail, contactLocation, contactPhone, socials } =
+    await getSiteContent();
   const phoneHref = `tel:${contactPhone.replace(/[^+\d]/g, "")}`;
 
   return (

@@ -4,14 +4,17 @@ import { StatsStrip } from "@/components/stats-strip";
 import { SelectedWork } from "@/components/selected-work";
 import { SkillsBlock } from "@/components/skills-block";
 import { SiteFooter } from "@/components/site-footer";
+import { getSiteContent } from "@/lib/site-content";
 
-export default function Home() {
+export default async function Home() {
+  const { stats } = await getSiteContent();
+
   return (
     <div className="flex min-h-full flex-1 flex-col bg-background">
       <SiteHeader />
       <main className="flex flex-1 flex-col">
         <HeroSection />
-        <StatsStrip />
+        <StatsStrip stats={stats} />
         <SelectedWork />
         <SkillsBlock />
       </main>

@@ -10,7 +10,7 @@ import {
   type Variants,
 } from "framer-motion";
 
-import { stats } from "@/lib/portfolio-data";
+import type { Stat } from "@/lib/site-content";
 
 const groupVariants: Variants = {
   hidden: {},
@@ -83,7 +83,7 @@ function CountUpValue({
   );
 }
 
-export function StatsStrip() {
+export function StatsStrip({ stats }: { stats: Stat[] }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.4 });
 

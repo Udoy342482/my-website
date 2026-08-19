@@ -1,8 +1,11 @@
 import Link from "next/link";
 
 import { TypewriterHeading } from "@/components/typewriter-heading";
+import { getSiteContent } from "@/lib/site-content";
 
-export function HeroSection() {
+export async function HeroSection() {
+  const { hero } = await getSiteContent();
+
   return (
     <section
       id="top"
@@ -10,26 +13,24 @@ export function HeroSection() {
     >
       <div className="flex items-center gap-2">
         <p className="font-mono text-base font-semibold text-brand">
-          Hello world!
+          {hero.eyebrow}
         </p>
       </div>
 
       <TypewriterHeading
-        text="I'm Udoy, a full-spectrum product designer crafting intuitive AI-driven, agentic experiences and scalable design systems."
+        text={hero.headline}
         className="max-w-[1280px] font-mono text-4xl leading-[1.15] font-bold text-foreground sm:text-5xl lg:text-[48px] lg:leading-[64px]"
       />
 
       <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-end lg:justify-between">
         <p className="max-w-[640px] text-lg leading-8 text-foreground-secondary sm:text-xl">
-          4+ years shipping mobile-first products at scale. 100M+ global
-          downloads. 700M+ collective portfolio valuation through engineered
-          experiences.
+          {hero.subtext}
         </p>
         <Link
-          href="#work"
+          href={hero.ctaHref}
           className="flex shrink-0 items-center gap-2 font-mono text-base font-bold text-foreground hover:text-brand"
         >
-          VIEW MY WORK ↓
+          {hero.ctaLabel}
         </Link>
       </div>
     </section>
