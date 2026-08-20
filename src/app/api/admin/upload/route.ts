@@ -39,6 +39,7 @@ export async function POST(request: Request) {
   const blob = await put(pathname, file, {
     access: "public",
     contentType: file.type,
+    token: process.env.PUBLIC_BLOB_READ_WRITE_TOKEN,
   });
 
   return Response.json({ url: blob.url });
