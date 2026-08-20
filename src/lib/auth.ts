@@ -41,17 +41,16 @@ export async function decryptSession(
 }
 
 export async function createSession() {
-  const expiresAt = Date.now() + SESSION_DURATION_MS;
-  const session = await encryptSession({ authenticated: true, expiresAt });
-  const cookieStore = await cookies();
+    const expiresAt = Date.now() + SESSION_DURATION_MS;
+    const session = await encryptSession({ authenticated: true, expiresAt });
+    const cookieStore = await cookies();
 
-  cookieStore.set(COOKIE_NAME, session, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    expires: new Date(expiresAt),
-    sameSite: "lax",
-    path: "/",
-  });
+    cookieStore.set(COOKIE_NAME, session, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/",
+    });
 }
 
 export async function deleteSession() {
