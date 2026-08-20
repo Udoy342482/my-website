@@ -179,11 +179,10 @@ export const defaultSiteContent: SiteContent = {
 
 const CONTENT_PATHNAME = "content/site.json";
 
-export const getSiteContent = cache(async (): Promise<SiteContent> => {
-  const stored = await readJsonBlob<SiteContent>(CONTENT_PATHNAME);
-  return stored ?? defaultSiteContent;
-});
-
+export async function getSiteContent(): Promise<SiteContent> {
+    const stored = await readJsonBlob<SiteContent>(CONTENT_PATHNAME);
+    return stored ?? defaultSiteContent;
+}
 export async function saveSiteContent(content: SiteContent) {
   await writeJsonBlob(CONTENT_PATHNAME, content);
 }
