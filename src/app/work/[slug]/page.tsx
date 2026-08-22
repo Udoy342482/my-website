@@ -16,6 +16,7 @@ import { CaseStudyOutcome } from "@/components/case-study/outcome";
 import { CaseStudyOpenProblems } from "@/components/case-study/open-problems";
 import { CaseStudyReflection } from "@/components/case-study/reflection";
 import { CaseStudyClosingBand } from "@/components/case-study/closing-band";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { getCaseStudiesData, getCaseStudy, getNextCaseStudy } from "@/lib/case-studies";
 
 export async function generateStaticParams() {
@@ -54,32 +55,58 @@ export default async function WorkCaseStudyPage(
       <SiteHeader />
       <main className="flex flex-1 flex-col">
         <CaseStudyHero caseStudy={caseStudy} />
-        <CaseStudyOverview caseStudy={caseStudy} />
-        <CaseStudyProblem caseStudy={caseStudy} />
-        {caseStudy.research ? <CaseStudyResearch caseStudy={caseStudy} /> : null}
-        <CaseStudyPersonas caseStudy={caseStudy} />
+        <ScrollReveal>
+          <CaseStudyOverview caseStudy={caseStudy} />
+        </ScrollReveal>
+        <ScrollReveal>
+          <CaseStudyProblem caseStudy={caseStudy} />
+        </ScrollReveal>
+        {caseStudy.research ? (
+          <ScrollReveal>
+            <CaseStudyResearch caseStudy={caseStudy} />
+          </ScrollReveal>
+        ) : null}
+        <ScrollReveal>
+          <CaseStudyPersonas caseStudy={caseStudy} />
+        </ScrollReveal>
         {caseStudy.designChallenge ? (
-          <CaseStudyDesignChallenge caseStudy={caseStudy} />
+          <ScrollReveal>
+            <CaseStudyDesignChallenge caseStudy={caseStudy} />
+          </ScrollReveal>
         ) : null}
         {caseStudy.keyDecisions ? (
-          <CaseStudyKeyDecisions caseStudy={caseStudy} />
+          <ScrollReveal>
+            <CaseStudyKeyDecisions caseStudy={caseStudy} />
+          </ScrollReveal>
         ) : null}
         {caseStudy.engineering ? (
-          <CaseStudyEngineering caseStudy={caseStudy} />
+          <ScrollReveal>
+            <CaseStudyEngineering caseStudy={caseStudy} />
+          </ScrollReveal>
         ) : null}
         {caseStudy.businessDecision ? (
-          <CaseStudyBusinessDecision caseStudy={caseStudy} />
+          <ScrollReveal>
+            <CaseStudyBusinessDecision caseStudy={caseStudy} />
+          </ScrollReveal>
         ) : null}
-        <CaseStudyOutcome caseStudy={caseStudy} />
-        <CaseStudyOpenProblems caseStudy={caseStudy} />
+        <ScrollReveal>
+          <CaseStudyOutcome caseStudy={caseStudy} />
+        </ScrollReveal>
+        <ScrollReveal>
+          <CaseStudyOpenProblems caseStudy={caseStudy} />
+        </ScrollReveal>
         {caseStudy.reflection ? (
-          <CaseStudyReflection caseStudy={caseStudy} />
+          <ScrollReveal>
+            <CaseStudyReflection caseStudy={caseStudy} />
+          </ScrollReveal>
         ) : null}
-        <CaseStudyClosingBand
-          nextSlug={nextCaseStudy.slug}
-          nextTitle={nextCaseStudy.title}
-          nextTeaser={nextCaseStudy.summary}
-        />
+        <ScrollReveal>
+          <CaseStudyClosingBand
+            nextSlug={nextCaseStudy.slug}
+            nextTitle={nextCaseStudy.title}
+            nextTeaser={nextCaseStudy.summary}
+          />
+        </ScrollReveal>
       </main>
       <SiteFooter />
     </div>

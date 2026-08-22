@@ -20,7 +20,7 @@ export function CopyEmailButton({ email }: { email: string }) {
     <button
       type="button"
       onClick={handleCopy}
-      className="flex items-center gap-1 pt-1 font-mono text-[13px] font-semibold text-brand"
+      className="flex items-center gap-1 pt-1 font-mono text-[13px] font-semibold text-brand transition-opacity duration-300 ease-out hover:opacity-70"
     >
       {copied ? "Copied!" : "Copy Email"}
       {copied ? (

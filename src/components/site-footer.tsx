@@ -20,10 +20,10 @@ export async function SiteFooter() {
           </h2>
           <a
             href={`mailto:${contactEmail}`}
-            className="group flex items-center gap-2 font-mono text-lg font-medium text-foreground sm:text-xl lg:text-[22px]"
+            className="group flex items-center gap-2 font-mono text-lg font-medium text-foreground transition-colors duration-300 ease-out hover:text-brand sm:text-xl lg:text-[22px]"
           >
             {contactEmail}
-            <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="size-5 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <Link
             href="/contact"
@@ -50,7 +50,7 @@ export async function SiteFooter() {
                   href={social.href}
                   target={isTel ? undefined : "_blank"}
                   rel={isTel ? undefined : "noopener noreferrer"}
-                  className="text-lg text-foreground hover:text-brand"
+                  className="text-lg text-foreground transition-colors duration-300 ease-out hover:text-brand"
                 >
                   {social.label}
                 </a>

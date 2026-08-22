@@ -20,10 +20,10 @@ export function CaseStudyClosingBand({
           </p>
           <Link
             href={`/work/${nextSlug}`}
-            className="group flex items-center gap-2 text-lg text-background/90 hover:text-background"
+            className="group flex items-center gap-2 text-lg text-background/90 transition-colors duration-300 ease-out hover:text-background"
           >
             {nextTeaser}
-            <ArrowUpRight className="size-5 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="size-5 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
 

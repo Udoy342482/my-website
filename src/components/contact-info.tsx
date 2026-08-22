@@ -16,7 +16,7 @@ export async function ContactInfo() {
         </p>
 
         <div className="flex w-full flex-col gap-3">
-          <div className="flex w-full flex-col gap-3 rounded-xl bg-card p-6">
+          <div className="flex w-full flex-col gap-3 rounded-xl border border-transparent bg-card p-6 transition-all duration-300 ease-out hover:border-border hover:shadow-lg">
             <div className="flex items-center gap-2">
               <Mail className="size-4 text-muted-foreground" />
               <p className="font-mono text-xs font-bold text-muted-foreground">
@@ -33,7 +33,7 @@ export async function ContactInfo() {
 
           <a
             href={phoneHref}
-            className="flex w-full flex-col gap-3 rounded-xl bg-card p-6"
+            className="group flex w-full flex-col gap-3 rounded-xl border border-transparent bg-card p-6 transition-all duration-300 ease-out hover:border-border hover:shadow-lg"
           >
             <div className="flex items-center gap-2">
               <Phone className="size-4 text-muted-foreground" />
@@ -47,12 +47,12 @@ export async function ContactInfo() {
               </p>
               <span className="flex items-center gap-1 pt-1 font-mono text-[13px] font-semibold text-brand">
                 Call Me
-                <ArrowUpRight className="size-3" />
+                <ArrowUpRight className="size-3 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
             </div>
           </a>
 
-          <div className="flex w-full flex-col gap-3 rounded-xl bg-card p-6">
+          <div className="flex w-full flex-col gap-3 rounded-xl border border-transparent bg-card p-6 transition-all duration-300 ease-out hover:border-border hover:shadow-lg">
             <div className="flex items-center gap-2">
               <MapPin className="size-4 text-muted-foreground" />
               <p className="font-mono text-xs font-bold text-muted-foreground">
@@ -79,10 +79,10 @@ export async function ContactInfo() {
                 href={social.href}
                 target={isTel ? undefined : "_blank"}
                 rel={isTel ? undefined : "noopener noreferrer"}
-                className="group flex w-full items-center justify-between text-base text-foreground-secondary hover:text-foreground"
+                className="group flex w-full items-center justify-between text-base text-foreground-secondary transition-colors duration-300 ease-out hover:text-foreground"
               >
                 {social.label}
-                <ArrowUpRight className="size-3.5 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />
+                <ArrowUpRight className="size-3.5 text-muted-foreground transition-all duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />
               </a>
             );
           })}

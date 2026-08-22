@@ -8,7 +8,7 @@ export function ProjectCard({ project }: { project: ProjectCardData }) {
   return (
     <Link
       href={`/work/${project.slug}`}
-      className="group flex flex-1 flex-col gap-5 rounded-xl border border-transparent bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:border-border hover:shadow-lg"
+      className="group flex flex-1 flex-col gap-5 rounded-xl border border-transparent bg-card p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-border hover:shadow-lg"
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden rounded">
         <Image

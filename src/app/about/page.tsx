@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { AboutHero } from "@/components/about-hero";
 import { ProcessPillars } from "@/components/process-pillars";
 import { SiteFooter } from "@/components/site-footer";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "About — Udoy Majumder",
@@ -17,7 +18,9 @@ export default function AboutPage() {
       <SiteHeader />
       <main className="flex flex-1 flex-col">
         <AboutHero />
-        <ProcessPillars />
+        <ScrollReveal>
+          <ProcessPillars />
+        </ScrollReveal>
       </main>
       <SiteFooter />
     </div>

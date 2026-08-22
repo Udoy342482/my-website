@@ -42,7 +42,7 @@ export function SiteHeader() {
                 target={isFile ? "_blank" : undefined}
                 rel={isFile ? "noopener noreferrer" : undefined}
                 className={cn(
-                  "group flex flex-col gap-1 font-mono text-[15px] transition-colors",
+                  "group flex flex-col gap-1 font-mono text-[15px] transition-colors duration-300 ease-out",
                   active
                     ? "font-bold text-foreground"
                     : "text-muted-foreground hover:text-foreground"
@@ -51,7 +51,7 @@ export function SiteHeader() {
                 {link.label}
                 <span
                   className={cn(
-                    "h-0.5 w-full bg-foreground transition-transform",
+                    "h-0.5 w-full bg-foreground transition-transform duration-300 ease-out",
                     active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                   )}
                 />
@@ -94,7 +94,7 @@ export function SiteHeader() {
                 rel={isFile ? "noopener noreferrer" : undefined}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "rounded-md px-2 py-3 font-mono text-[15px] hover:bg-muted hover:text-foreground",
+                  "rounded-md px-2 py-3 font-mono text-[15px] transition-colors duration-300 ease-out hover:bg-muted hover:text-foreground",
                   active ? "font-bold text-foreground" : "text-muted-foreground"
                 )}
               >
